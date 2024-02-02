@@ -1,0 +1,154 @@
+"""
+cumle = input("lütfen bir cumle giriniz...")
+hepsikucukharflicumle = cumle.lower()                                                             #   HEPSİ KÜCÜK HARFLİ ÖDEV...
+print(hepsikucukharflicumle)
+
+#_____________________________________________________
+
+a = " ses ses ses "
+
+a_find = a.count("ses")                                                 #bu kodu "find" ile de yaptım ama medense calıimadı sonuç u "1" verdi sürekli. 
+print(a_find)                                                                    #CÜMLE İÇİNDE KAÇ DEFA AYNI KARAKTER GEÇTİĞİNİ SÖĞLEYEN ÖDEV.
+
+#__________________________________________________________
+
+cumle = input("Lütfen Bir Cumle Söyleyiniz:")
+
+
+harf = input("Lütfen Girdğiniz Cümleden Bir Harf Söyleyiniz:")
+
+
+cumle = harf.count("")                                                                 #bu kodu "find" ile de yaptım ama nedense sonuc "0" verdi.
+print("Bu Cümlede Aynı Bu Karakterden Geciyor:" , cumle)                             #ÇÜMLE İÇİDE KAÇ DEFA AYNI KARAKTERDEN GEÇTĞİĞNİ SÖYLEYEN ÖDEV.
+
+#________________________________________________________________
+
+
+ilk_cumle = "perdelerin cok güzelmiş "
+ikinci_cumle = "ayakabıların çok güzelmiş"
+
+birleşim = ilk_cumle + ikinci_cumle                                                            #KONUMU BULMA ÖDEVİ
+
+substring = birleşim[11:14]                                                         #az bişi chatCPT kullanmış olabilirim ama öğrendim.
+konum = birleşim.find("cok") 
+print(substring)
+print(konum)
+
+#_________________________________________________________________
+
+cumle = input("LÜTFEN BİR CÜMLE GİRİNİZ!! :")
+kelimeler = cumle.split()
+sıralı_kelimeler = sorted(kelimeler)                             #KULLANICIDAN ALINAN CUMLEYİ ALFABETİK SIRAYA GÖRE SIRALAYAN ÖDEV. "NOT: chatCPT DEN YARDIM ALDIM."
+print(" - ".join(sıralı_kelimeler))
+
+#____________________________________________________________________
+
+
+cumle1 = input("lütfen birinci cumleyi gireiniz! :")
+cumle2 = input("lütfen ikinci cumleyi giriniz! :")
+
+toplam = cumle1 + cumle2                                                                 #KULLANICIDAN İKİ KELİME ALIR VE HEPSİNİ KÜCUK YAZAR.
+
+toplam = toplam.lower()
+print(toplam)
+
+
+#___________________________________________________________________
+
+cumle = "Arabaları Severim"
+degisecek_cumle = cumle.replace("Araba" , "Ucak")                                                               #KELİME DEĞİŞTİREMECE.
+print(degisecek_cumle)
+
+
+
+#_______________________________________________________________________
+
+
+cumle = input("LÜTFEN KÜCÜK HARFLERLE BİR CUMLE GİRİNİZ 'İÇİNDE YOĞUNLUKLA (a) HARFİ BULUNSUN!!' :" )
+degisecek_harf = cumle.replace("a","@")       
+print(degisecek_harf)                                                                                       #CÜMLEDEKİ BÜTÜN "A" HARFİNI "@" İNE CEVİRİR.
+  
+#_________________________________________________________________________
+
+kelime = input("LÜTFEN BİR KELİME GİREİN : ")
+# dogru_mu = True                                                                                                     #BİR KELİMEYİ TERSTEN YAZDIRIYOR.
+# yanlıs_mı= False                                                                             #malesef kontrol edemedim, coğu kez yaptım ama sacma sapan sonuçlar aldim
+#print(kelime[::-1] == dogru_mu ) 
+print(kelime[::-1] )     
+
+
+#_______________________________________________________________________________
+
+cumle = input("LÜTFEN BİR CÜMLE GİRİNİZ! :")
+kelimeler = cumle.split()                                                                                             #CÜMLEDEKİ EN UZUN KELİMEYİ BULUR
+cumledeki_en_uzun_kelime = max(kelimeler, key=len)
+print("CÜMLEDEKİ EN UZUN KELİME! :", cumledeki_en_uzun_kelime )
+
+#______________________________________________________________________________
+
+liste = (1,2,3,4,5,6,7,8.9,10)
+print(liste[4])                                                                                                       #ortasındaki elemnı bulunuz.
+
+
+
+#_______________________________________________________________________________
+
+set = {100,200,300,400}
+set.add(500)
+print(set)                                                                                              #set in içine bir sayı ekleme ve eklediğin sayıyı kaldırma.
+set.remove(500)
+print(set)
+
+
+#______________________________________________________________________________
+
+dict = {"anahtar1": "deger1" , "anahtar2" : "deger2"}
+dict.pop("anahtar2")                                                                                       #2 ÇİFT DİCT İ BİRİSİNİ SİLER
+print(dict)         
+
+
+#______________________________________________________________________________
+
+liste = [123,789]
+yeni_liste = len(liste) // 2
+liste = liste[:yeni_liste] + [456] + liste[yeni_liste:]                                                      #   LİSTENİN ORTASINA YENİ SAYI EKLER.
+print(liste)
+#_______________________________________________________________________________
+
+liste = [123, 456, 789]
+ayır = len(liste) // 2 
+tuple_ekle = (liste[ayır], )                                                                              #LİSTENİN ORTSASINA BİR TUPLE EKLEME.
+yeni_tuple = liste[:ayır] + [tuple_ekle] + liste[ayır + 1:]
+print(yeni_tuple)
+
+#_________________________________________________________________________________
+
+set = {5, 7, 6,}
+
+setli_liste = list(set)                                                                                    #SETİN ELEMANLARININ TOPLAMI.
+toplam = sum(setli_liste)                                                               #NOT: CHATCPT DEN YARDIM ALDIM VE "SUM" FOKSİYONUNU ÖĞRENMEYE ÇALIŞTIM.
+print("Setteki Elemanlar: ", set)
+print("Setteki elemanların toplamı: " , toplam)
+
+#______________________________________________________________________________________
+"""
+dict = {"anahtar1": "selam" , "anahtar2" : "dünya"} #...?                                                            YAPAMDIM HOCAM
+                                                                #Bir dict oluşturun ve dictin içindeki string türündeki değerlerin karakter sayılarının toplamını bulun.
+"""
+#_________________________________________________________________________________________
+"""
+#Bir liste oluşturun ve listenin içindeki en büyük sayıyı bulun, ancak sadece ...
+#...aritmetik operatörler (+, -, *, /) kullanmadan yapın.
+  """                                                                               #HOCAM BU SORUYUDA YAPADIM. CHATCPT DEN YARDIM ALDIM AMA SAÇMA BİR SONUÇ ALDIM.
+
+#____________________________________________________________________________________________
+#SORU
+"""
+Bir dict oluşturun ve dictin içindeki string türündeki 
+değerlerin hepsini birleştirerek tek bir string elde edin.
+
+"""
+                                                                                            #hocam ister inanın ister inanmayın ama bu soruyuda yapadım...
+#son 3 soru beynimi yaktı...
+
+
