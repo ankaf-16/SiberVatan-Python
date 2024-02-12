@@ -1,4 +1,4 @@
-#ödev2 / ASAL SAYI BULMA. list1 [10,15,20] / list2 [5,100,250]
+#ödev3 / ASAL SAYI BULMA. list1 [10,15,20] / list2 [5,100,250]
 
 
 def enBüyük(liste1):
