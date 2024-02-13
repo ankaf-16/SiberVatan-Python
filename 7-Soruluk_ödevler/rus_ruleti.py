@@ -25,7 +25,9 @@ def oyun():
 oyun()
 
 
-"""
+""" 
+#benimde anlamdığım bir kod owpragjwerggwbtıwrğtb
+
 def oyun():
     print(rasgelesayı())
     rasgelesatıseç = rasgelesayı()
