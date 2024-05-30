@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Paneli</title>
+    <!-- Bootstrap CSS dosyası -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Ana Sayfa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Çıkış Yap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 animate__animated animate__fadeIn">
+        <h2>User1 Kullanıcı Paneli</h2>
+
+        <h1>SELAM NASILSINIZ EFENİM, BENDE İYİM. İŞTE SİZE DERSLER...</h1>
+        <h3>MATEMATİK</h3>
+        <h3>TÜRKÇE</h3>
+        <h3>FEN BİLİMLERİ</h3>
+        <h1> 
+
+        </h1>
+        <h1>
+
+        </h1>
+        <h5>from flask import Flask, render_template, request, redirect, url_for, session
+            from flask_bootstrap import Bootstrap
+            
+            app = Flask(__name__)
+            Bootstrap(app)
+            app.secret_key = 'supersecretkey'  # Oturum verilerinin güvenliğini sağlamak için gizli anahtar
+            
+            # Kullanıcıları depolamak için basit bir sözlük kullanıyoruz.
+            users = {
+                'admin': {'password': 'admin123', 'role': 'Admin'},
+                'user': {'password': 'user123', 'role': 'User'}
+            }
+            
+            @app.route('/')
+            def index():
+                return render_template('index.html')
+            
+            @app.route('/login', methods=['GET', 'POST'])
+            def login():
+                if request.method == 'POST':
+                    username = request.form['username']
+                    password = request.form['password']
+                    if username in users and users[username]['password'] == password:
+                        # Kullanıcıyı oturum açtır ve rolüne göre yönlendir.
+                        session['username'] = username
+                        return redirect(url_for(users[username]['role'].lower()))
+                    else:
+                        return render_template('login.html', error='Kullanıcı adı veya şifre yanlış!')
+                return render_template('login.html')
+            
+            @app.route('/admin')
+            def admin():
+                if 'username' in session and users[session['username']]['role'] == 'Admin':
+                    return render_template('admin.html')
+                else:
+                    return redirect(url_for('login'))
+            
+            @app.route('/user')
+            def user():
+                if 'username' in session and users[session['username']]['role'] == 'User':
+                    return render_template('user.html')
+                else:
+                    return redirect(url_for('login'))
+            
+            @app.route('/logout')
+            def logout():
+                session.pop('username', None)
+                return redirect(url_for('login'))
+            
+            if __name__ == '__main__':
+                app.run(debug=True)
+            </h5>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
